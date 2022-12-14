@@ -91,6 +91,10 @@ class PauseSubState extends MusicBeatSubstate
 		changeSelection();
 
 		cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]];
+		
+		#if android
+addVirtualPad (FULL, A_B);
+#end
 	}
 
 	override function update(elapsed:Float)
@@ -117,7 +121,7 @@ class PauseSubState extends MusicBeatSubstate
 			changeSelection(1);
 		}
 		
-		#if cpp
+		#if windows 
 			else if (leftP)
 			{
 				oldOffset = PlayState.songOffset;
