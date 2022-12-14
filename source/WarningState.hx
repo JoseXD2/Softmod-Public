@@ -84,10 +84,23 @@ PTSD,
 Mentions of Pico’s School,
 If you are a victim of domestic violence, remember that you aren’t alone.
 Enjoy the story.
-(Press any key to continue)";
+(touch to continue)";
         dropText.visible = true;
         dropText.screenCenter();
-         if (FlxG.keys.justPressed.ANY)
+         
+		#if android
+		var justTouched:Bool = false;
+
+		for (touch in FlxG.touches.list)
+		{
+			justTouched = false;
+			
+			if (touch.justReleased){
+				justTouched = true;
+			}
+		}
+		#end
+		if (justTouched)
 		{
             FlxG.sound.music.stop();
             FlxG.switchState(new MainMenuState());
