@@ -1348,7 +1348,11 @@ class PlayState extends MusicBeatState
 		doof.cameras = [camDialogue];
 		doof2.cameras = [camDialogue];
 
-	
+	#if android
+		addAndroidControls();
+		androidc.visible = true;
+		#end
+			
 		//if (FlxG.save.data.songPosition)
 		//{
 		//	songPosBG.cameras = [camHUD];
