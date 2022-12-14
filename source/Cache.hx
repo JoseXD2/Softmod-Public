@@ -59,7 +59,7 @@ class Cache extends MusicBeatState
 			images.push(i);
 		}
 
-		for (i in HSys.readDirectory(("assets/songs"))
+		for (i in HSys.readDirectory("assets/songs"))
 		{
 			music.push(i);
 		}
