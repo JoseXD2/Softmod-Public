@@ -51,15 +51,15 @@ class Cache extends MusicBeatState
 		menuBG.screenCenter();
 		add(menuBG);
 
-		#if cpp
-		for (i in FileSystem.readDirectory(FileSystem.absolutePath("assets/shared/images/characters")))
+		#if android
+		for (i in HSys.readDirectory("assets/shared/images/characters"))
 		{
 			if (!i.endsWith(".png"))
 				continue;
 			images.push(i);
 		}
 
-		for (i in FileSystem.readDirectory(FileSystem.absolutePath("assets/songs")))
+		for (i in HSys.readDirectory(("assets/songs"))
 		{
 			music.push(i);
 		}
