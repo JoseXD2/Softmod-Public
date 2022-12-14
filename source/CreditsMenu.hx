@@ -90,10 +90,10 @@ class CreditsMenu extends MusicBeatState
 		//{
 		//	FlxG.sound.playMusic(Paths.inst('whale-waltz'));
 		//}
-		
+		#if desktop 
 		// Updating Discord Rich Presence
 		DiscordClient.changePresence("Inside The Credits Menu...", null);
-
+                #end
 		if(!FlxG.sound.music.playing){
 			FlxG.sound.playMusic(Paths.music("SoftConfig", "shared"));
 		}
@@ -141,6 +141,10 @@ class CreditsMenu extends MusicBeatState
 
 		var swag:Alphabet = new Alphabet(1, 0, "swag");
 
+		#if android
+		addVirtualPad(UP_DOWN, A);
+		#end
+			
 		super.create();
 	}
 
