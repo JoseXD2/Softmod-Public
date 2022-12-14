@@ -14,9 +14,9 @@ import flixel.text.FlxText;
 import flixel.util.FlxColor;
 import lime.utils.Assets;
 import flixel.addons.transition.FlxTransitionableState;
-
+#if windows 
 import Discord.DiscordClient;
-
+#end
 using StringTools;
 
 class CreditsMenu extends MusicBeatState
